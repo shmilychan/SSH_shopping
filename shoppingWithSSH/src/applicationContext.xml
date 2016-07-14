@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	
+	xsi:schemaLocation="http://www.springframework.org/schema/aop     
+    http://www.springframework.org/schema/aop/spring-aop-3.0.xsd   
+    http://www.springframework.org/schema/beans   
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd   
+    http://www.springframework.org/schema/tx   
+    http://www.springframework.org/schema/tx/spring-tx.xsd"
+	xmlns:tx="http://www.springframework.org/schema/tx">
+
+	<!-- <bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName">
+			<value>org.logicalcobwebs.proxool.ProxoolDriver</value>
+		</property>
+		<property name="url">
+			<value>proxool.shopping</value>
+		</property>
+	</bean> -->
+
+ 
+ 
+ 
+ 	<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName">
+			<value>oursql</value>
+		</property>
+	    <!-- 如果你不想使用 'java:comp/env/'前缀的话请设置下面的值为true, 默认值为false -->
+		<property name="resourceRef">
+			<value>false</value>
+		</property>
+		<property name="jndiEnvironment">
+			<props>
+				<!-- The value of Context.PROVIDER_URL -->
+				<prop key="java.naming.provider.url">t3://localhost:7001</prop>
+				<prop key="java.naming.factory.initial">weblogic.jndi.WLInitialContextFactory</prop>
+			</props>
+		</property>
+	</bean>
+	 
+	
+	
+	
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+
+		<property name="annotatedClasses">
+			<list>
+				<value>com.buaa.shopping.entity.User</value>
+				<value>com.buaa.shopping.entity.Role</value>
+				<value>com.buaa.shopping.entity.Goods</value>
+				<value>com.buaa.shopping.entity.GoodsType</value>
+				<value>com.buaa.shopping.entity.Car</value>
+				<value>com.buaa.shopping.entity.Order</value>
+				<value>com.buaa.shopping.entity.OrderDetail</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.format_sql">true</prop>
+				<!-- <prop key="hibernate.hbm2ddl.auto">update</prop> -->
+			</props>
+		</property>
+	</bean>
+	
+	
+	<bean id="indexAction" class="com.buaa.shopping.action.IndexAction">
+		<property name="goodsService" ref="goodsService" />
+		<property name="goodsTypeService" ref="goodsTypeService" />
+	</bean>
+
+	<!-- User -->
+	<bean id="userDAO" class="com.buaa.shopping.DAO.impl.UserDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>	
+	
+	<bean id="userService" class="com.buaa.shopping.service.impl.UserServiceImpl">
+		<property name="userDAO" ref="userDAO" />
+		<property name="pageDAO" ref="pageDAO" />
+	</bean>
+
+	<bean id="userAction" class="com.buaa.shopping.action.UserAction">
+		<property name="userService" ref="userService" />
+	</bean>
+
+	<!-- goods -->
+	<bean id="goodsDAO" class="com.buaa.shopping.DAO.impl.GoodsDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	
+	<bean id="goodsService" class="com.buaa.shopping.service.impl.GoodsServiceImpl">
+		<property name="goodsDAO" ref="goodsDAO" />
+		<property name="pageDAO" ref="pageDAO" />
+	</bean>
+
+	<bean id="goodsAction" class="com.buaa.shopping.action.GoodsAction">
+		<property name="goodsService" ref="goodsService" />
+		<property name="goodsTypeService" ref="goodsTypeService" />
+	</bean>
+	
+	<!-- goodsType -->
+	<bean id="goodsTypeDAO" class="com.buaa.shopping.DAO.impl.GoodsTypeDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	
+	<bean id="goodsTypeService" class="com.buaa.shopping.service.impl.GoodsTypeServiceImpl">
+		<property name="goodsTypeDAO" ref="goodsTypeDAO" />
+	</bean>
+
+	<bean id="goodsTypeAction" class="com.buaa.shopping.action.GoodsTypeAction">
+		<property name="goodsTypeService" ref="goodsTypeService" />
+	</bean>
+	
+	<!-- car -->
+	<bean id="carDAO" class="com.buaa.shopping.DAO.impl.CarDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="carService" class="com.buaa.shopping.service.impl.CarServiceImpl">
+		<property name="carDAO" ref="carDAO" />
+	</bean>
+
+	<bean id="carAction" class="com.buaa.shopping.action.CarAction">
+		<property name="carService" ref="carService" />
+		<property name="goodsService" ref="goodsService" />
+	</bean>
+	
+	<!-- order -->
+	<bean id="orderDAO" class="com.buaa.shopping.DAO.impl.OrderDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	 
+	<bean id="orderService" class="com.buaa.shopping.service.impl.OrderServiceImpl">
+		<!-- <property name="goodsDAO" ref="goodsDAO" /> -->
+		<property name="orderDAO" ref="orderDAO" />
+		<property name="pageDAO" ref="pageDAO" />
+	</bean>
+
+	<bean id="orderAction" class="com.buaa.shopping.action.OrderAction">
+		<property name="orderService" ref="orderService" />
+		<property name="carService" ref="carService" />
+	</bean>
+	
+	<!-- pageDAO -->
+	<bean id="pageDAO" class="com.buaa.shopping.DAO.impl.PageDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="fileUploadAction" class="com.buaa.shopping.action.FileUploadAction">
+	</bean>
+	
+	<!-- spring事务配置 -->
+	
+	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- 配置事务传播特性 -->
+
+	<tx:advice id="testAdvice" transaction-manager="transactionManager">
+
+		<tx:attributes>
+			<tx:method name="save*" propagation="REQUIRED" />
+			<tx:method name="del*" propagation="REQUIRED" />
+			<tx:method name="update*" propagation="REQUIRED" />
+			<tx:method name="add*" propagation="REQUIRED" />
+			<tx:method name="find*" propagation="REQUIRED" />
+			<tx:method name="get*" propagation="REQUIRED" />
+			<tx:method name="apply*" propagation="REQUIRED" />
+			<tx:method name="insert*" propagation="REQUIRED" /> 
+		</tx:attributes>
+
+	</tx:advice>
+
+	<!-- 配置参与事务的类 -->
+
+	<aop:config>
+		<aop:pointcut id="shoppingServiceMethod"
+			expression="execution(* com.buaa.shopping.service.*.*(..))" />
+		<aop:advisor pointcut-ref="shoppingServiceMethod" advice-ref="testAdvice" />
+	</aop:config>
+
+</beans>
+

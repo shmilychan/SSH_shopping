@@ -1,0 +1,104 @@
+* {
+	margin: 0 auto;
+	padding: 0;
+}
+
+body {
+	text-align: left;
+	background-image: url(../images/menu_bg.jpg);
+	background-color: #E3EFFB;
+}
+
+.all {
+	width: 130px;
+	height: auto;
+	margin: auto;
+	margin-top: 6px;
+	padding-left: 12px;
+	margin-bottom: 0px;
+}
+
+.all img {
+	cursor: pointer;
+}
+
+.main {
+	width: 150px;
+	height: auto;
+	margin: auto;
+	margin-top: 0px;
+	font-size: 12px;
+}
+
+.menus {
+	width: 96%;
+	height: auto;
+	margin-top: 12px;
+	margin-left: 0px;
+	margin-bottom: 10px;
+	text-align: left;
+}
+
+.menus .title {
+	color: #306161;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+ul {
+	list-style-type: none;
+}
+
+#menu li {
+	line-height: 22px;
+}
+
+.menuhide {
+	display: none;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: left;
+	padding-left: 30px;
+}
+
+.menushow {
+	display: block;
+	margin-top: 1px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.menuhide ul {
+	margin-top: 10px;
+}
+
+.menuhide li {
+	margin-top: 4px;
+}
+
+.title {
+	font-weight: bold;
+	text-align: center;
+	background-image: url(../images/menu_bt.jpg);
+	background-repeat: no-repeat;
+	background-position: top;
+	width: 150px;
+	height: auto;
+}
+
+.title .head {
+	width: 130px;
+	height: 22px;
+}
+
+a:link {
+	text-decoration: none;
+	color: #306161;
+	font-weight: normal;
+}
+
+a:visited {
+	text-decoration: none;
+	font-weight: normal;
+	color: #306161;
+}

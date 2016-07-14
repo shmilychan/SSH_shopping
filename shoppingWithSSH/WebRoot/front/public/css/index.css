@@ -1,0 +1,335 @@
+/***************index.html*******************/
+/************* banner *************/
+#banner{ clear:both; width:100%; height:420px; overflow:hidden; z-index:0;}
+.fullSlide{width:100%;position:relative;height:420px;background:#000;}
+.fullSlide .bd{margin:0 auto;position:relative;z-index:0;overflow:hidden;}
+.fullSlide .bd ul{width:100% !important;}
+.fullSlide .bd li{width:100% !important;height:420px;overflow:hidden;text-align:center;}
+.fullSlide .bd li a{display:block;height:420px;}
+.fullSlide .hd{width:100%;position:absolute;z-index:1;bottom:0;left:0;height:30px;line-height:30px;}
+.fullSlide .hd ul{ width:1240px; text-align:right; padding-right:20px; margin:auto;}
+.fullSlide .hd ul li{cursor:pointer;display:inline-block;*display:inline;zoom:1;width:10px;height:10px; margin-right:10px;overflow:hidden;background:#8e8988;filter:alpha(opacity=80);opacity:0.8;line-height:999px;}
+.fullSlide .hd ul .on{background:#fff;}
+.fullSlide .prev,.fullSlide .next{display:block;position:absolute;z-index:1;top:50%;margin-top:-30px;left:15%;z-index:1;width:40px;height:60px;background:url(../images/slider-arrow.png) -126px -137px #000 no-repeat;cursor:pointer;filter:alpha(opacity=50);opacity:0.5;display:none;}
+.fullSlide .next{left:auto;right:15%;background-position:-6px -137px;}
+
+.recommend{
+	clear:both;
+	overflow:hidden;
+	padding-top:10px;
+}
+
+.recommend .title{
+	height:40px;
+	line-height:40px;
+	border-bottom:solid 2px #ff4a00;
+	}
+
+.recommend .title img{
+	float:left;
+	padding-left:5px;
+	padding-top:10px;
+}
+
+.recommend .title p{
+	float:left;
+	color:#000;
+	font-size:18px;
+	padding-left:5px;
+	FONT-FAMILY: "Microsoft Yahei";
+}
+
+.recommend .left{
+	float:left;
+	width:930px;
+	overflow:hidden;
+	border-bottom:solid 1px #dfdfdf;
+}
+
+.recommend .left .img{
+	float:left;
+	position:relative;
+	border-top:solid 1px #dfdfdf;
+	border-left:solid 1px #dfdfdf;
+}
+
+.recommend .left .img_309{
+	width:309px;
+	height:309px;
+	text-align:center;
+}
+
+.recommend .left .img_309 p{
+	color:#000;
+	font-size:14px;
+	text-align:left;
+	line-height:20px;
+	padding-top:20px;
+	padding-left:28px;
+	FONT-FAMILY: "Microsoft Yahei";
+}
+
+.recommend .left .img_309 p strong{
+	float:left;
+	width:270px;
+	display:block;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+	}
+
+.recommend .left .img_309 p strong a:hover{
+	color:#F30;
+}
+
+.recommend .left .img_309 p span{
+	clear:both;
+	display:block;
+}
+
+.recommend .right{
+	float:left;
+	width:308px;
+	height:619px;
+	overflow:hidden;
+	border:solid 1px #dfdfdf;
+	}
+
+.recommend .right h2{
+	height:103px;
+	font-size:24px;
+	line-height:103px;
+	FONT-FAMILY: "Microsoft Yahei";
+	}
+
+.recommend .right h2 span{
+	color:#ff4a00;
+	padding-left:30px;
+	padding-right:10px;
+}
+
+.board-list li{
+	float:left;
+	clear:both;
+	width:308px;
+	height:102px;
+	display:block;
+	overflow:hidden;
+	background-color:#FFF;
+	border-top:solid 1px #dfdfdf;
+}
+
+.board-list li:hover{
+	background-color:#fafafa;
+}
+
+.board-list li .item-num{
+	float:left;
+	font-size:40px;
+	color:#6d6d6d;
+	padding-top:30px;
+	padding-left:30px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+.board-list li .top3{
+	color:#ff4a00;
+}
+
+.board-list li .item-info{
+	float:left;
+	width:130px;
+	font-size:13px;
+	padding-top:35px;
+	padding-left:10px;
+	padding-right:10px;
+	FONT-FAMILY: "Microsoft Yahei";
+}
+
+.board-list li .item-info .item-title{
+	clear:both;
+	display:block;
+	width:130px;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.board-list li .item-info .item-title a:hover{
+	color:#F60;
+}
+
+.board-list li .item-info .item-price{
+	clear:both;
+	line-height:24px;
+}
+
+.board-list li .item-thumb{
+	display:block;
+	float:left;
+	width:70px;
+	padding-top:10px;
+}
+
+.list-title{
+	clear:both;
+	width:1240px;
+	overflow:hidden;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+
+.list-title p{
+	float:left;
+	height:40px;
+	width:1165px;
+	display:block;
+	position:relative;
+	border-bottom:solid 2px #dfdfdf;
+}
+
+.list-title p strong{
+	font-size:18px;
+	width:100px;
+	padding-left:10px;
+	line-height:40px;
+	position:absolute;
+	FONT-FAMILY: "Microsoft Yahei";
+}
+
+.list-title a{
+	float:right;
+	width:57px;
+	height:18px;
+	color:#828282;
+	display:block;
+	font-size:12px;
+	text-align:center;
+	line-height:18px;
+	margin-top:30px;
+	border:solid 1px #dfdfdf;
+	FONT-FAMILY: "Microsoft Yahei";
+}
+
+.list-title a:hover{
+	background-color:#f2f2f2;
+}
+
+.list-div{
+	clear:both;
+	height:309px;
+	overflow:hidden;
+	border-top:solid 1px #dfdfdf;
+	border-right:solid 1px #dfdfdf;
+	border-bottom:solid 1px #dfdfdf;
+}
+
+.list-div ul{
+	overflow:hidden;
+}
+
+.list-div ul li{
+	float:left;
+	width:308px;
+	height:300px;
+	display:inline;
+	overflow:hidden;
+	text-align:center;
+	padding-top:10px;
+	position:relative;
+	border-left:solid 1px #dfdfdf;
+}
+
+.list-div ul li:hover{
+
+	background-image: url(../images/bj-li.gif);
+	background-repeat: no-repeat;
+}
+
+.list-div ul li p{
+	width:280px;
+	padding:0px;
+	margin:0px auto;
+	overflow: hidden;
+	white-space: nowrap;
+	font-family: "Microsoft Yahei";
+	color: #ff6700;
+}
+
+.price .num{
+	font-size:14px;
+	font-family: "Microsoft Yahei";
+}
+
+.list-div ul li p a{
+	color:#000;
+	font-size:16px;
+	FONT-FAMILY: "Microsoft Yahei";
+}
+
+
+.list-div ul li p a:hover{
+	color:#F30;
+}
+
+.list-div ul li pre{
+	color:#999;
+	clear:both;
+	width:290px;
+	padding:0px;
+	font-size:12px;
+	overflow: hidden;
+	margin:0px auto;
+	line-height:30px;
+	white-space: nowrap;
+}
+
+.list-div ul li label{
+	width:230px;
+	margin:0 auto;
+	font-size:14px;
+	overflow: hidden;
+	line-height:24px;
+	text-align:left;
+	display:block;
+	white-space: nowrap;
+	FONT-FAMILY: "Microsoft Yahei";
+	}
+
+.list-div ul li label a:hover{
+	color:#F30;
+}
+
+.list-div ul li cite{
+	clear:both;
+	display:block;
+	width:230px;
+	margin:0 auto;
+	font-size:14px;
+	padding:0px;
+	text-align:left;
+	padding-bottom:10px;
+}
+
+.list-div ul li cite del{
+	color:#999;
+	padding-left:5px;
+}
+
+.list-div ul li dfn{
+	color:#FFF;
+	float:right;
+	width:14px;
+	height:69px;
+	display:block;
+	font-size:14px;
+	z-index:100;
+	position:absolute;
+	right:0px; top:1px;
+	white-space:normal;
+	line-height:16px;
+	padding:8px 10px 0px 10px;
+	FONT-FAMILY: "Microsoft Yahei";
+	background-image: url(../images/r-yh.png);
+	background-repeat: no-repeat;
+}

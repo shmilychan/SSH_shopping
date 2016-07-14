@@ -1,0 +1,79 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{
+	margin:0px;
+	padding:0px;
+}
+body{
+	background-color:#002779;
+	font-size:12px;
+}
+table{
+	font-size:12px;
+}
+.input{
+	width:134px;
+	height:20px;
+	line-height:18px;
+	padding-left:2px;
+	font-size:12px;
+	border:1px solid #999999;
+}
+.inputBgin{
+	width:134px;
+	height:20px;
+	line-height:18px;
+	border:1px solid #666666;
+	background-color:#CCCCCC;
+	padding-left:2px;
+	font-size:12px;
+}
+.input_verify{
+	width:76px;
+	height:20px;
+	line-height:18px;
+	padding-left:2px;
+	font-size:12px;
+	border:1px solid #999999;
+}
+.inputBgin_verify{
+	width:76px;
+	height:20px;
+	line-height:18px;
+	border:1px solid #666666;
+	background-color:#CCCCCC;
+	padding-left:2px;
+	font-size:12px;
+}
+.button {
+	width:134px;
+	BORDER-RIGHT: #2d5082 1px solid;
+	PADDING-RIGHT: 8px;
+	BORDER-TOP: #2d5082 1px solid;
+	PADDING-LEFT: 8px;
+	BACKGROUND: url(../images/button_bg.gif) repeat-x;
+	PADDING-BOTTOM: 0px;
+	MARGIN: 2px;
+	BORDER-LEFT: #2d5082 1px solid;
+	PADDING-TOP: 2px;
+	BORDER-BOTTOM: #2d5082 1px solid;
+}
+a:link {
+	text-decoration:none;
+	color:#FFFFFF;
+	font-weight:normal;
+}
+
+a:visited {
+	text-decoration:none;
+	font-weight:normal;
+	color: #FFFFFF;
+}
+.main {
+	float:right;
+	margin-top:140px;
+	margin-left:500px;
+	color:#FFFFFF;
+}
+

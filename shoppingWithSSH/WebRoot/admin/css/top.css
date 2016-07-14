@@ -1,0 +1,35 @@
+*{
+	margin:0px;
+	padding:0px;
+}
+body {
+	background-color:#1c5db6;
+	font-size:12px;
+}
+.main{
+	background-image:url(../images/header_bg.jpg);
+	height:56px;
+	width:100%;	
+}
+.top_left {
+	float:left;
+}
+.center{
+	float:left;
+	margin-left:260px;
+	height:56px;
+	padding-top:36px;
+}
+.top_right {
+	float:right;
+}
+a{
+	color:#FFFFFF;
+	text-decoration:none;
+	font-weight:bold;
+}
+a:hover{
+	color:#FFFFFF;
+	text-decoration:underline;
+	font-weight:bold;
+}

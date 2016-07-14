@@ -1,0 +1,45 @@
+@import "base.css";
+body {
+	text-align:center;
+	background-color:#E3EFFB;
+}
+
+.main  {
+	width:95%;
+	border:solid 1px #99CCCC;
+	background-color:#FFFFFF;
+	text-align:left;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:15px;
+	padding:20px;
+	height:120px;
+	font-size:14px;
+	color:#335b64;
+}
+.top {
+	text-align:left;
+	color:#000066;
+	font-weight:bold;
+	font-size:14px;
+	width:95%;
+	border:solid 1px #99CCCC;
+	background-color:#FFFFFF;
+	margin-top:15px;
+	margin-left:auto;
+	margin-right:auto;
+	padding:20px;
+}
+.footer {
+	color:#666666;
+	font-size:12px;
+	width:95%;
+	border:solid 1px #99CCCC;
+	background-color:#FFFFFF;
+	margin-top:15px;
+	margin-left:auto;
+	margin-right:auto;
+	padding:20px;
+}
+
+

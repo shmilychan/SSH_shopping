@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE proxool>
+
+<proxool>
+	<alias>shopping</alias> <!--数据源的别名 -->
+	<driver-url>jdbc:mysql://localhost/shopping?characterEncoding=UTF8</driver-url>
+	<driver-class>com.mysql.jdbc.Driver</driver-class> <!--驱动类 -->
+	<driver-properties>
+		<property name="user" value="root" /> <!--用户名 -->
+		<property name="password" value="root" /><!--密码 -->
+	</driver-properties>
+	<maximum-connection-count>100</maximum-connection-count>
+	<minimum-connection-count>10</minimum-connection-count>
+	<house-keeping-sleep-time>90000</house-keeping-sleep-time>
+	<maximum-new-connections>10</maximum-new-connections>
+	<prototype-count>5</prototype-count>
+	<test-before-use>true</test-before-use>
+	<house-keeping-test-sql>select 1</house-keeping-test-sql>
+</proxool>

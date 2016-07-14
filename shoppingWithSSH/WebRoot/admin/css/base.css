@@ -1,0 +1,24 @@
+@charset "utf-8";
+
+* {
+	margin:0 auto;
+	padding:0px;
+}
+body{
+	font-size:12px;
+}
+a:link {
+	color: #306161;
+	text-decoration: none;
+}
+
+a:visited {
+	color: #306161;
+	text-decoration: none;
+}
+
+a:hover {
+	color:#306161;
+	text-decoration:underline;
+}
+

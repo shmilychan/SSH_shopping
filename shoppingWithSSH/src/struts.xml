@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<package name="deafult" namespace="/" extends="struts-default">
+		
+		<interceptors>
+			<interceptor name="adminLoginInterceptor" class="com.buaa.shopping.interceptor.AdminInterceptor"></interceptor>
+			<interceptor name="userLoginInterceptor" class="com.buaa.shopping.interceptor.LoginInterceptor"></interceptor>
+			<interceptor name="deleteInterceptor" class="com.buaa.shopping.interceptor.DeleteInterceptor"></interceptor>
+			<interceptor-stack name="AdminLoginStack">
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+				<interceptor-ref name="adminLoginInterceptor"></interceptor-ref>
+			</interceptor-stack>
+			<interceptor-stack name="UserLoginStack">
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+				<interceptor-ref name="userLoginInterceptor"></interceptor-ref>
+			</interceptor-stack>
+			<interceptor-stack name="DeleteOprateStack">
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+				<interceptor-ref name="deleteInterceptor"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		
+		<global-results>
+			<result name="userLogin">/front/jsp/user/login.jsp</result>
+			<result name="adminLogin">/admin/login.jsp</result>
+		</global-results>
+				
+		
+		<action name="checkLogin" class="userAction" method="checkLogin">
+			<result name="success">/admin/index.jsp</result>
+		</action>
+		
+		<action name="userLogout" class="userAction" method="logout">
+			<result name="success">/front/index.jsp</result>
+		</action>
+		<action name="register" class="userAction" method="register">
+			<result name="success">/front/jsp/user/login.jsp</result>
+		</action>
+		<action name="preUpdate" class="userAction" method="preUpdate">
+			<result name="success">/front/jsp/user/userUpdate.jsp</result>
+			<interceptor-ref name="UserLoginStack"></interceptor-ref>
+		</action>
+		
+		<action name="userUpdate" class="userAction" method="userUpdate">
+			<result name="success">/front/jsp/user/login.jsp</result>
+			<interceptor-ref name="UserLoginStack"></interceptor-ref>
+		</action>
+		
+		<action name="userList" class="userAction" method="findAllUser">
+			<result name="success">/admin/user/userList.jsp</result>
+			<interceptor-ref name="AdminLoginStack"></interceptor-ref>
+		</action>
+		<action name="deleteUser" class="userAction" method="deleteUser">
+			<result name="success" type="redirectAction">userList</result>
+			<interceptor-ref name="DeleteOprateStack"></interceptor-ref>
+		</action>
+		
+		<action name="logout" class="userAction" method="logout">
+			<result name="success">/admin/login.jsp</result>
+		</action>
+		
+		<action name="userCheckLogin" class="userAction" method="userCheckLogin">
+			<result name="success" type="redirectAction">index</result>
+		</action>
+		
+		<action name="verifyCode" class="userAction" method="verifyCode"/>
+		<action name="upload" class="fileUploadAction" method="upload"/>
+		
+		<action name="goodsList" class="goodsAction" method="goodsList">
+			<result name="success">/admin/goods/goodsList.jsp</result>
+			<interceptor-ref name="AdminLoginStack"></interceptor-ref>
+		</action>
+		
+		<action name="goodsTypeList" class="goodsTypeAction" method="goodsTypeList">
+			<result name="success">/admin/goodsType/goodsTypeList.jsp</result>
+			<interceptor-ref name="AdminLoginStack"></interceptor-ref>
+		</action>
+		
+		<action name="preAddGoods" class="goodsAction" method="preAddGoods">
+			<result name="success">/admin/goods/addGoods.jsp</result>
+			<interceptor-ref name="AdminLoginStack"></interceptor-ref>
+		</action>
+		
+		<action name="addGoods" class="goodsAction" method="addGoods">
+			<result name="success" type="redirectAction">goodsList</result>
+			<interceptor-ref name="AdminLoginStack"></interceptor-ref>
+		</action>
+		
+		<action name="preAddGoodsType" class="goodsTypeAction" method="preAddGoodsType">
+			<result name="success">/admin/goodsType/addGoodsType.jsp</result>
+			<interceptor-ref name="AdminLoginStack"></interceptor-ref>
+		</action>
+		
+		<action name="addGoodsType" class="goodsTypeAction" method="addGoodsType">
+			<result name="success" type="redirectAction">goodsTypeList</result>
+			<interceptor-ref name="AdminLoginStack"></interceptor-ref>
+		</action>
+		
+		<action name="preUpdateGoods" class="goodsAction" method="preUpdateGoods">
+			<result name="success">/admin/goods/updateGoods.jsp</result>
+			<interceptor-ref name="AdminLoginStack"></interceptor-ref>
+		</action>
+		
+		<action name="updateGoods" class="goodsAction" method="updateGoods">
+			<result name="success" type="redirectAction">goodsList</result>
+			<interceptor-ref name="AdminLoginStack"></interceptor-ref>
+		</action>
+		
+		<action name="showCar" class="carAction" method="showCar">
+			<result name="success" >/front/jsp/goods/showcar.jsp</result>
+			<interceptor-ref name="UserLoginStack"></interceptor-ref>
+		</action>
+		
+		<action name="index" class="indexAction" method="index">
+			<result name="success">/front/index.jsp</result>
+		</action>
+		
+		<action name="addOrder" class="orderAction" method="addOrder">
+			<result name="success" type="redirectAction">findOrder</result>
+			<interceptor-ref name="UserLoginStack"></interceptor-ref>
+		</action>
+		
+		<action name="findOrder" class="orderAction" method="findOrderByUid">
+			<result name="success" >/front/jsp/order/showOrder.jsp</result>
+			<interceptor-ref name="UserLoginStack"></interceptor-ref>
+		</action>
+		
+		<action name="getOrderDetail" class="orderAction" method="findOrderDetail">
+			<result name="success" >/front/jsp/order/orderDetail.jsp</result>
+			<interceptor-ref name="UserLoginStack"></interceptor-ref>
+		</action>
+		
+		<action name="showGoods" class="goodsAction" method="showGoods">
+			<result name="success" >/front/jsp/goods/showGoods.jsp</result>
+		</action>
+		
+		<action name="addCar" class="carAction" method="addCar">
+			<result name="success" >/front/index.jsp</result>
+			<interceptor-ref name="UserLoginStack"></interceptor-ref>
+		</action>
+		
+		<action name="orderList" class="orderAction" method="findAllOrder">
+			<result name="success" >/admin/order/orderList.jsp</result>
+			<interceptor-ref name="AdminLoginStack"></interceptor-ref>
+		</action>
+		
+		<action name="dealOrder" class="orderAction" method="dealOrder">
+			<result name="success" type="redirectAction">orderList</result>
+			<interceptor-ref name="AdminLoginStack"></interceptor-ref>
+		</action>
+		
+		<action name="queryGoodsByName" class="goodsAction" method="queryGoodsByName">
+			<result name="success">/front/jsp/goods/queryGoodsList.jsp</result>
+		</action>
+		
+		<action name="deleteGoods" class="goodsAction" method="deleteGoodsById">
+			<result name="success" type="redirectAction">goodsList</result>
+			<interceptor-ref name="DeleteOprateStack"></interceptor-ref>			
+		</action>
+		
+		<action name="queryOrderByStatus" class="orderAction" method="queryOrderByStatus">
+			<result name="success">/admin/order/orderList.jsp</result>
+			<interceptor-ref name="AdminLoginStack"></interceptor-ref>			
+		</action>
+		
+	</package>
+</struts>
+

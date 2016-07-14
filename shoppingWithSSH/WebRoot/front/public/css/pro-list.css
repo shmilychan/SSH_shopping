@@ -1,0 +1,165 @@
+/************* products-list.html *************/
+.products-list{
+	clear:both;
+}
+
+.products-list ul li{
+	float:left;
+	width:306px;
+	height:417px;
+	border:solid 2px #fff;
+}
+
+.products-list ul .active{
+	border:solid 2px #e6e6e6;
+	}
+
+.products-list ul li .img{
+	width:220px;
+	height:220px;
+	margin:auto;
+	margin-top:40px;
+}
+
+.products-list ul li .img a{
+	display:block;
+	width:100%;
+	height:100%;
+}
+
+.products-list ul li .w{
+	clear:both;
+	width:270px;
+	margin:auto;
+	padding-top:40px;
+}
+
+.products-list ul li .w .left{
+	float:left;
+	color:#000;
+	width:172px;
+	font-size:18px;
+	line-height:24px;
+	overflow:hidden;
+	FONT-FAMILY: "Microsoft Yahei";
+}
+
+.products-list ul li .w .left p{
+	width:172px;
+	overflow:hidden;
+	white-space: nowrap;
+}
+
+.products-list ul li .w .left a{
+	display:block;
+	width:172px;
+	overflow:hidden;
+}
+.products-list ul li .w .left .price{
+	float: left;
+    font: 18px/32px Verdana;
+    color: #f33;
+}
+.products-list ul li .w .left .price del {
+    color: #888;
+    font-style: normal;
+    margin-left: 6px;
+}
+
+.products-list ul li .w .left a:hover{
+	color:#F30;
+}
+
+
+.products-list ul li .w .right{
+	float:right;
+	width:80px;
+	padding-top:5px;
+	font-size:12px;
+	overflow:hidden;
+	FONT-FAMILY: "Microsoft Yahei";
+}
+
+.products-list ul li .w .right p{
+	color:#999;
+	padding-top:10px;
+	_padding-top:5px;
+}
+
+.products-list ul li .btn{
+	clear:both;
+	width:260px;
+	margin:auto;
+	margin-top:10px;
+	padding-top:10px;
+	padding-left:10px;
+	visibility:hidden;
+	border-top: #dfdfdf solid 1px;
+}
+
+.products-list ul .active .btn{
+	visibility:visible;
+}
+
+.products-list ul li .btn1{
+	float:left;
+	width:120px;
+	height:30px;
+	color:#1d7ad9;
+	display:block;
+	font-size:12px;
+	margin-right:10px;
+	font-weight:bold;
+	line-height:30px;
+	text-align:center;
+	margin-top:5px;
+	background-color:#cae4ff;
+	border:solid 1px #60a2e4;
+}
+
+.products-list ul li .btn1:hover{
+	background-color:#b9d8f9;
+}
+
+.products-list ul li .btn2{
+	float:left;
+	width:80px;
+	height:30px;
+	color:#ffffff;
+	display:block;
+	font-size:12px;
+	font-weight:bold;
+	line-height:30px;
+	margin-top:5px;
+	padding-left:40px;
+	background-color:#1d7ad9;
+	border:solid 1px #1d7ad9;
+	background-image: url(../images/cart3.png);
+	background-repeat: no-repeat;
+	background-position: 18px center;
+}
+
+.products-list ul li .btn2:hover{
+	background-color:#1167c0;
+}
+
+.products-list .right i{
+	float:left;
+	height:12px;
+	width:65px;
+	overflow:hidden;
+	margin-bottom:6px;
+	background-image: url(../images/icon-stat.png);
+	background-repeat: no-repeat;
+}
+
+
+
+
+
+
+
+
+
+
+
